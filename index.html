@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header, .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .header a, .footer a {
+            color: #5f6368;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .header-right, .footer-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .sign-in {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .main {
+        	top: 30%;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .logo {
+            width: 272px;
+            height: 92px;
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            width: 60%;
+            max-width: 584px;
+        }
+
+        .search-bar-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 10px 40px 10px 20px; /* Add right padding for the icon */
+            font-size: 16px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            box-shadow: none;
+            outline: none;
+            margin-bottom: 20px;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-80%);
+            width: 20px;
+            height: 20px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/1200px-Magnifying_glass_icon.svg.png'); /* Example icon URL */
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none; /* Prevent the icon from blocking input field clicks */
+        }
+
+        .search-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-button {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            color: #3c4043;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin: 0 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            border: 1px solid #dadce0;
+        }
+
+        .footer {
+            border-top: 1px solid #e8e8e8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a href="#">About</a>
+            <a href="#">Store</a>
+        </div>
+        <div class="header-right">
+            <a href="#">Gmail</a>
+            <a href="#">Images</a>
+            <div class="menu">
+                <div class="menu-icon"></div>
+            </div>
+            <button class="sign-in">Sign in</button>
+        </div>
+    </header>
+
+    <div class="main">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" class="logo">
+        <div class="search-container">
+            <div class="search-bar-wrapper">
+                <input type="text" class="search-bar" placeholder="Search Google or type a URL">
+                <span class="search-icon"></span>
+            </div>
+            <div class="search-buttons">
+                <button class="search-button">Google Search</button>
+                <button class="search-button">I'm Feeling Lucky</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <a href="#">Advertising</a>
+            <a href="#">Business</a>
+            <a href="#">How Search works</a>
+        </div>
+        <div class="footer-right">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Settings</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.search-button').addEventListener('click', function() {
+            let query = document.querySelector('.search-bar').value;
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            }
+        });
+    </script>
+</body>
+</html>
